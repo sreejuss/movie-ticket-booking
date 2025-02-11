@@ -2,12 +2,14 @@
     <div class="card">
       <div class="tabs">
         <button 
+        id="login-tab"
           class="tab-button" 
           [class.active]="isLogin" 
           (click)="isLogin = true">
           Login
         </button>
         <button 
+        id="register-tab"
           class="tab-button" 
           [class.active]="!isLogin" 
           (click)="isLogin = false">
@@ -16,17 +18,17 @@
       </div>
   
       <form *ngIf="isLogin; else registerForm" (ngSubmit)="login()">
-        <input type="email" placeholder="Email" [(ngModel)]="loginData.email" name="email" required>
-        <input type="password" placeholder="Password" [(ngModel)]="loginData.password" name="password" required>
-        <button type="submit" class="action-button">Login</button>
+        <input type="email" placeholder="Email" id="email" [(ngModel)]="loginData.email" name="email" required>
+        <input type="password" placeholder="Password" id="password" [(ngModel)]="loginData.password" name="password" required>
+        <button type="submit" class="action-button" id="login-button">Login</button>
       </form>
   
       <ng-template #registerForm>
         <form (ngSubmit)="register()">
-          <input type="text" placeholder="Full Name" [(ngModel)]="registerData.name" name="name" required>
-          <input type="email" placeholder="Email" [(ngModel)]="registerData.email" name="email" required>
-          <input type="password" placeholder="Password" [(ngModel)]="registerData.password" name="password" required>
-          <button type="submit" class="action-button">Register</button>
+          <input type="text" placeholder="Full Name" id="name" [(ngModel)]="registerData.name" name="name" required>
+          <input type="email" placeholder="Email" id="email" [(ngModel)]="registerData.email" name="email" required>
+          <input type="password" placeholder="Password" id="password" [(ngModel)]="registerData.password" name="password" required>
+          <button type="submit" class="action-button" id="register-button">Register</button>
         </form>
       </ng-template>
   
