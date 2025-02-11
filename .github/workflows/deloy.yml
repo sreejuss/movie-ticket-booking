@@ -22,13 +22,15 @@ jobs:
         run: npm install
 
       - name: Build Angular app
-        run: npm run build --configuration=production --base-href="/movie-ticket-booking/"
-        
+        run: npm run build -- --configuration=production --base-href="/movie-ticket-booking/"
+
       - name: Configure Git
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
 
-
       - name: Deploy to GitHub Pages
-        run: npx angular-cli-ghpages --dir=dist/movie-ticket-booking/browser --no-silent
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx angular-cli-ghpages --dir=dist/movie-ticket-booking/browser --repo=https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
