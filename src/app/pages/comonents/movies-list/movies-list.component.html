@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let movie of movies">
+        <div class="card">
+          <img [src]="movie.image" class="card-img-top" alt="{{ movie.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ movie.title }} ({{ movie.year }})</h5>
+            <p class="card-text"><strong>Genre:</strong> {{ movie.genre }}</p>
+            <p class="card-text"><strong>Director:</strong> {{ movie.director }}</p>
+            <p class="card-text">
+              <strong>Rating:</strong> {{ movie.rating ? movie.rating : 'N/A' }}
+            </p>
+            <button class="btn btn-danger">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
