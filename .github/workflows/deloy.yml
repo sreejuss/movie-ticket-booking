@@ -25,4 +25,4 @@ jobs:
         run: npm run build --configuration=production --base-href="/movie-ticket-booking/"
 
       - name: Deploy to GitHub Pages
-        run: npx angular-cli-ghpages --dir=dist/movie-ticket-booking/browser
+        run: npx angular-cli-ghpages --dir=dist/movie-ticket-booking/browser --no-silent
