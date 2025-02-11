@@ -25,10 +25,7 @@ jobs:
         run: npm install -g @angular/cli
 
       - name: Build Angular app
-        run: ng build --output-path=dist --base-href /movie-ticket-booking/
+        run: npm run build --configuration=production --base-href="/movie-ticket-booking/"
 
       - name: Deploy to GitHub Pages
-        uses: AhsanAyaz/angular-deploy-gh-pages-actions@2272ef32f364bc80d8680ee03d8e58f126156c31
-        with:
-          branch: gh-pages  # Deploy to gh-pages branch
-          folder: dist/movie-ticket-booking  # Ensure the correct folder is used
+      - run: npx angular-cli-ghpages --dir=dist/movie-ticket-booking
