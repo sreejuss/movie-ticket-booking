@@ -33,4 +33,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npx angular-cli-ghpages --dir=dist/movie-ticket-booking/browser --repo=https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+          npx angular-cli-ghpages --dir=dist/movie-ticket-booking/browser --no-silent --repo=https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
