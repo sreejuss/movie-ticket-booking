@@ -31,4 +31,4 @@ jobs:
         uses: AhsanAyaz/angular-deploy-gh-pages-actions@2272ef32f364bc80d8680ee03d8e58f126156c31
         with:
           branch: gh-pages  # Deploy to gh-pages branch
-          folder: dist  # Ensure the correct folder is used
+          folder: dist/movie-ticket-booking  # Ensure the correct folder is used
