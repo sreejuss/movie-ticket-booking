@@ -28,7 +28,7 @@ jobs:
         run: ng build --output-path=dist --base-href /movie-ticket-booking/
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v3
         with:
           branch: gh-pages  # Deploy to gh-pages branch
           folder: dist  # Ensure the correct folder is used
